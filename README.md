@@ -13,6 +13,12 @@ Converts a long UTF-8 text doc to a single audio file, via Python script
 - Run the script: nohup python audiobook.py &
 - Let the script run (may take a while for larger texts, ~2 hours for 1.25 million characters
 
+## Roadmap / Future Goals
+- Handle appropriate MP3 tagging (will require another dependency)
+- Clean up output / logging
+- Option to split into logical chunks for larger documents (ch 1, etc)
+- Long goal: Options for marking different voices for characters / speakers.
+
 
 #### References
 This project is based on this tutorial, with some bug-fixes and QoL improvements: https://aws.amazon.com/blogs/machine-learning/convert-your-text-into-an-mp3-file-with-amazon-polly-and-a-simple-python-script/
