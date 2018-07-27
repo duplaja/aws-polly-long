@@ -3,6 +3,7 @@ Converts a long UTF-8 text doc to a single audio file, via Python script
 
 ## Requirements
 - Latest Version AWS CLI installed, with credentials set
+- AWS Credentials need Polly at a minimu, SNS if you want text alert when done
 - Python
 - Text to convert in a single file in UTF-8 format
 
