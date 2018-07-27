@@ -3,8 +3,9 @@ Converts a long UTF-8 text doc to a single audio file, via Python script
 
 ## Requirements
 - Latest Version AWS CLI installed, with credentials set
-- AWS Credentials need Polly at a minimu, SNS if you want text alert when done
+- AWS Credentials need Polly at a minimum, SNS if you want text alert when done
 - Python
+- mid3v2, from python-mutagen, for tagging (sudo apt-get install python-mutagen )
 - Text to convert in a single file in UTF-8 format
 
 
@@ -15,7 +16,6 @@ Converts a long UTF-8 text doc to a single audio file, via Python script
 - Let the script run (may take a while for larger texts, ~2 hours for 1.25 million characters
 
 ## Roadmap / Future Goals
-- Handle appropriate MP3 tagging (will require another dependency)
 - Clean up output / logging
 - Option to split into logical chunks for larger documents (ch 1, etc)
 - Long goal: Options for marking different voices for characters / speakers.
