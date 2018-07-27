@@ -2,10 +2,15 @@
 import subprocess
 import codecs
 
+#Enter / change below as needed
 inputfilename = "story.txt"
-outputname = "Dracula-test.mp3"
+outputname = "The-output-story-name.mp3"
 pollyvoice = "Brian"
+#Use country code first, no spaces or symbols. Ex) 12223334444. Leave as none if you don't want a text alert
+phone = "none"
 
+
+#Begins the process
 f = codecs.open(inputfilename, encoding='utf-8')
 
 cnt = 0
@@ -40,3 +45,9 @@ while num_add < cnt:
 execute_command = 'rm polly_out*.mp3'
 print 'Removing temporary files: ' + execute_command
 subprocess.call(execute_command, shell=True)
+
+
+#Sends text alert that it is finished, if phone != "none"
+if phone != "none":
+    command = "aws sns publish --phone-number=+"+str(phone)+" --message=\"Audio Recording "+outputname+" finished.\""
+    subprocess.call(command, shell=True)
