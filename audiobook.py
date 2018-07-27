@@ -28,14 +28,15 @@ for line in f:
     print command
     subprocess.call(command, shell=True)
 
+    
+#Concatenates the audio files, one by one (to prevent an error with too many arguements)    
 num_add = 0
-
 while num_add < cnt:
     execute_command = 'cat '+outputname+' polly_out' + str(num_add) + '.mp3 >> '+outputname
     subprocess.call(execute_command, shell=True)
     num_add += 1
 
-
+#Removes the tempoary files
 execute_command = 'rm polly_out*.mp3'
 print 'Removing temporary files: ' + execute_command
 subprocess.call(execute_command, shell=True)
