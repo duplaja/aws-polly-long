@@ -10,7 +10,7 @@ Converts a long UTF-8 text doc to a single audio file, via Python script
 ## Usage
 - Place text to convert and audiobook.py in the same folder
 - Modify the inputfilename to match your text to convert, and if desired, change the pollyvoice and outputname.
-- Run the script: python audiobook.py
+- Run the script: nohup python audiobook.py &
 - Let the script run (may take a while for larger texts, ~2 hours for 1.25 million characters
 
 
