@@ -6,9 +6,14 @@ import codecs
 inputfilename = "story.txt"
 outputname = "The-output-story-name.mp3"
 pollyvoice = "Brian"
+
 #Use country code first, no spaces or symbols. Ex) 12223334444. Leave as none if you don't want a text alert
 phone = "none"
 
+#Tagging Information, leave title as none to skip
+genre="none"
+title="none"
+author="none"
 
 #Begins the process
 f = codecs.open(inputfilename, encoding='utf-8')
@@ -46,6 +51,11 @@ execute_command = 'rm polly_out*.mp3'
 print 'Removing temporary files: ' + execute_command
 subprocess.call(execute_command, shell=True)
 
+#Sets appropriate audio tags
+if title != "none":
+    command = "mid3v2 -a \""+author+"\" -g \""+genre+"\" -t \""+title+"\" -A \""+title+" \""+outputfilename+\";
+    subprocess.call(command, shell=True)
+    print 'Tags added'
 
 #Sends text alert that it is finished, if phone != "none"
 if phone != "none":
