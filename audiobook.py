@@ -53,7 +53,7 @@ subprocess.call(execute_command, shell=True)
 
 #Sets appropriate audio tags
 if title != "none":
-    command = "mid3v2 -a \""+author+"\" -g \""+genre+"\" -t \""+title+"\" -A \""+title+" \""+outputfilename+\";
+    command = "mid3v2 -a \""+author+"\" -g \""+genre+"\" -t \""+title+"\" -A \""+title+" \""+outputfilename+"\""
     subprocess.call(command, shell=True)
     print 'Tags added'
 
