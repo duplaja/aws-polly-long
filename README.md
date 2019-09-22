@@ -5,6 +5,7 @@ Converts a long UTF-8 text doc to a single audio file, via Python script
 - Latest Version AWS CLI installed, with credentials set (Make sure you update!)
 - AWS Credentials need Polly at a minimum, SNS if you want text alert when done
 - Python3 (won't work with 2 anymore)
+- Designed to work in a bash shell or similar (cat, etc)
 - ~~mid3v2, from python-mutagen, for tagging (sudo apt-get install python-mutagen )~~ Removed
 - Text to convert in a single file in UTF-8 format
 
