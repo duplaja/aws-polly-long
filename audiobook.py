@@ -1,15 +1,11 @@
-#!/usr/bin/python3
 # coding: utf-8
 import subprocess
 import codecs
 
 #Enter / change below as needed
-inputfilename = "input-text-file.txt" # Single blank line between paragraphs
-
-outputname = "your-output-file-name.mp3" #no spaces, will work on getting this straightened out
-
-pollyvoice = "Brian" #If you keep neural engine, make sure you pick a voice that supports it
-
+inputfilename = "the-story.txt"
+outputname = "the-story.mp3" #no spaces, will work on getting this straightened out
+pollyvoice = "Brian"
 #Use country code first, no spaces or symbols. Ex) 12223334444. Leave as none if you don't want a text alert
 phone = "none"
 
@@ -21,12 +17,11 @@ cnt = 0
 for line in f:
     rendered = ''
 
-    #remove --engine neural if you don't want to use neural TTS (saves money, but more edges to tones)
     command = 'aws polly synthesize-speech --text-type ssml --engine neural --output-format "mp3" --voice-id "'+pollyvoice+'" --text "{0}" {1}'
 
     if '\n' == line:
         #A pause after a paragraph
-        rendered = '<speak><break time="1200ms"/></speak>' #change this if you want less / more of a break between paragraphs
+        rendered = '<speak><break time="1500ms"/></speak>'
     else:
         #A pause after a sentence
         linestrip = line.strip()
